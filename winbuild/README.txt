@@ -74,8 +74,8 @@ x86 version:
 - open Visual Studio Command Prompt (x86)
 	- go to winbuild folder and execute:
 		nmake -f Makefile.vc mode=static VC=13 WITH_DEVEL=C:\OpenSSL-Win32 WITH_SSL=static ENABLE_SSPI=no ENABLE_IPV6=no ENABLE_IDN=no GEN_PDB=no DEBUG=no MACHINE=x86
-	- copy builds\libcurl-vc10-x86-release-static-ssl-static-spnego\lib\libcurl_a.lib to winbuild\dist\lib\x86
-	- copy builds	\libcurl-vc10-x86-release-static-ssl-static-spnego\include\* winbuild\dist\include\
+	- copy builds\libcurl-vc13-x86-release-static-ssl-static\lib\libcurl_a.lib to winbuild\dist\lib\x86
+	- copy builds\libcurl-vc13-x86-release-static-ssl-static\include\* winbuild\dist\include\
 
 x64 version:
 - open Visual Studio Command Prompt (x64)
@@ -92,3 +92,17 @@ If using git run commands below from sgminer/ folder:
   git submodule update
   
 or clone/extract Jansson source from https://github.com/akheron/jansson to submodules/jansson folder.
+
+6. Compiling
+------------
+- open Visual Studio 2013
+- open project \winbuild\sgminer.vcxproj
+
+x86 version:
+- in solution properties select Release|Win32 for Active config
+	- in solution explorer right click jansson project and select build
+	- in solution explorer right click sgminer project and select build
+	- copy folder \winbuild\output\x86\release as completed build
+	
+x64 version:
+tbd
